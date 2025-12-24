@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code – Morpion | Portfolio</title>
+
+  <link rel="stylesheet" href="portfolio.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+
+  <style>
+    .code-toolbar{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin: 14px 0 0;
+    }
+
+    .code-block{
+      margin-top: 14px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      overflow:auto;
+      line-height:1.65;
+      font-family: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .code-block code{ display:block; white-space:pre; }
+
+    .code-hint {
+      margin-top: 12px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    .code-hint code {
+      padding: 2px 6px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.88);
+    }
+
+    @media (max-width: 900px) {
+      .code-toolbar .btn{ width:100%; justify-content:center; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="canvas-bg"></canvas>
+
+  <nav>
+    <ul>
+      <li><a href="index.html#home">Accueil</a></li>
+      <li><a href="index.html#skills">Compétences</a></li>
+      <li><a href="index.html#projects">Projets</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="project-page">
+    <a class="back-link" href="projet-morpion.html">← Retour au projet</a>
+
+    <div>
+      <h1 class="project-title">Morpion — Code C</h1>
+      <p class="project-subtitle">
+        Affichage propre du code dans le thème du portfolio (copie + téléchargement).
+      </p>
+    </div>
+
+    <div class="project-layout">
+      <div class="project-panel">
+        <h2>Code</h2>
+
+        <div class="code-toolbar">
+          <button class="btn btn-inline" id="copy-code" type="button">Copier le code</button>
+          <button class="btn btn-inline btn-secondary" id="download-c" type="button">Télécharger morpion.c</button>
+          <a class="btn btn-inline btn-secondary" href="index.html#projects">Retour portfolio</a>
+        </div>
+
+        <pre class="code-block"><code id="code-c">    #include &lt;stdio.h&gt;
+
+    #define TAILLE 3
+
+    void afficherGrille(char grille[TAILLE][TAILLE]) {
+        printf(&quot;\n&quot;);
+        for (int i = 0; i &lt; TAILLE; i++) {
+            for (int j = 0; j &lt; TAILLE; j++) {
+                printf(&quot; %c &quot;, grille[i][j]);
+                if (j &lt; TAILLE - 1) printf(&quot;|&quot;);
+            }
+            printf(&quot;\n&quot;);
+            if (i &lt; TAILLE - 1) printf(&quot;---|---|---\n&quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+    int verifierVictoire(char grille[TAILLE][TAILLE], char joueur) {
+        // Vrification des lignes
+        for (int i = 0; i &lt; TAILLE; i++) {
+            if (grille[i][0] == joueur &amp;&amp; grille[i][1] == joueur &amp;&amp; grille[i][2] == joueur)
+                return 1;
+        }
+        // Vrification des colonnes
+        for (int j = 0; j &lt; TAILLE; j++) {
+            if (grille[0][j] == joueur &amp;&amp; grille[1][j] == joueur &amp;&amp; grille[2][j] == joueur)
+                return 1;
+        }
+        // Vrification des diagonales
+        if (grille[0][0] == joueur &amp;&amp; grille[1][1] == joueur &amp;&amp; grille[2][2] == joueur)
+            return 1;
+        if (grille[0][2] == joueur &amp;&amp; grille[1][1] == joueur &amp;&amp; grille[2][0] == joueur)
+            return 1;
+
+        return 0;
+    }
+
+    int caseValide(char grille[TAILLE][TAILLE], int ligne, int colonne) {
+        return (ligne &gt;= 0 &amp;&amp; ligne &lt; TAILLE &amp;&amp; colonne &gt;= 0 &amp;&amp; colonne &lt; TAILLE &amp;&amp; grille[ligne][colonne] == &#x27; &#x27;);
+    }
+
+    int matchNul(char grille[TAILLE][TAILLE]) {
+        for (int i = 0; i &lt; TAILLE; i++) {
+            for (int j = 0; j &lt; TAILLE; j++) {
+                if (grille[i][j] == &#x27; &#x27;) return 0; // Au moins une case vide
+            }
+        }
+        return 1; // Aucune case vide
+    }
+
+    void jouer() {
+        char grille[TAILLE][TAILLE] = { {&#x27; &#x27;, &#x27; &#x27;, &#x27; &#x27;}, {&#x27; &#x27;, &#x27; &#x27;, &#x27; &#x27;}, {&#x27; &#x27;, &#x27; &#x27;, &#x27; &#x27;} };
+        int ligne, colonne;
+        char joueurActuel = &#x27;1&#x27;;
+
+        printf(&quot;Bienvenue au jeu du Morpion !\n&quot;);
+        afficherGrille(grille);
+
+        while (1) {
+            printf(&quot;Joueur %c, entrez votre coup (ligne et colonne entre 0 et 2) : &quot;, joueurActuel);
+            scanf(&quot;%d %d&quot;, &amp;ligne, &amp;colonne);
+
+            if (!caseValide(grille, ligne, colonne)) {
+                printf(&quot;Coup invalide ! Ressayez.\n&quot;);
+                continue;
+            }
+
+            grille[ligne][colonne] = joueurActuel;
+            afficherGrille(grille);
+
+            if (verifierVictoire(grille, joueurActuel)) {
+                printf(&quot;Flicitations ! Le joueur %c a gagn !\n&quot;, joueurActuel);
+                break;
+            }
+
+            if (matchNul(grille)) {
+                printf(&quot;Match nul !\n&quot;);
+                break;
+            }
+
+            // Changer de joueur
+            joueurActuel = (joueurActuel == &#x27;1&#x27;) ? &#x27;2&#x27; : &#x27;1&#x27;;
+        }
+    }
+
+    int main() {
+        jouer();
+        return 0;
+    }
+</code></pre>
+
+        <p class="code-hint">
+          Compilation (exemple) :
+          <code>gcc main.c -o morpion</code>
+          puis exécution :
+          <code>./morpion</code>
+        </p>
+      </div>
+
+      <div class="project-panel">
+        <h2>Infos</h2>
+        <div class="project-meta">
+          <div class="meta-item">
+            <span class="meta-label">Langage</span>
+            <span class="meta-value">C</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Fichier</span>
+            <span class="meta-value">main.c</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">Jeu console (morpion)</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Entrées</span>
+            <span class="meta-value">Coordonnées ligne/colonne</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© Djerwane</p>
+  </footer>
+
+  <script src="portfolio.js"></script>
+  <script>
+  (() => {
+    const codeEl = document.getElementById("code-c");
+    const copyBtn = document.getElementById("copy-code");
+    const downloadBtn = document.getElementById("download-c");
+
+    const C_URL = "./main.c";
+    const C_FILENAME = "main.c";
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(text);
+      }
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      ta.style.top = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    }
+
+    function directDownload(url, filename) {
+      const abs = new URL(url, window.location.href).href;
+      const a = document.createElement("a");
+      a.href = abs;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      return abs;
+    }
+
+    async function forceDownloadViaFetch(url, filename) {
+      const abs = new URL(url, window.location.href).href;
+      const res = await fetch(abs, { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const blob = await res.blob();
+      const blobUrl = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      URL.revokeObjectURL(blobUrl);
+      return abs;
+    }
+
+    if (copyBtn && codeEl) {
+      copyBtn.addEventListener("click", async () => {
+        const original = copyBtn.textContent;
+        try {
+          await copyText(codeEl.innerText);
+          copyBtn.textContent = "Copié !";
+        } catch (e) {
+          copyBtn.textContent = "Impossible";
+        }
+        setTimeout(() => (copyBtn.textContent = original), 1400);
+      });
+    }
+
+    if (downloadBtn) {
+      downloadBtn.addEventListener("click", async () => {
+        const original = downloadBtn.textContent;
+        downloadBtn.textContent = "Téléchargement...";
+        downloadBtn.disabled = true;
+
+        try {
+          // Si tu ouvres la page en local (file://), fetch est souvent bloqué.
+          if (window.location.protocol === "file:") {
+            directDownload(C_URL, C_FILENAME);
+          } else {
+            try {
+              await forceDownloadViaFetch(C_URL, C_FILENAME);
+            } catch (e) {
+              // Fallback (au cas où fetch est bloqué par le serveur)
+              directDownload(C_URL, C_FILENAME);
+            }
+          }
+
+          downloadBtn.textContent = "Téléchargé !";
+        } catch (e) {
+          const tried = new URL(C_URL, window.location.href).href;
+          alert("Téléchargement impossible.\nURL testée : " + tried + "\nOuvre le site via un serveur (Live Server / GitHub Pages) plutôt qu'en double-cliquant le fichier.");
+          downloadBtn.textContent = original;
+        } finally {
+          setTimeout(() => {
+            downloadBtn.textContent = original;
+            downloadBtn.disabled = false;
+          }, 1200);
+        }
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

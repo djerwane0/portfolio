@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio Dev</title>
+    <link rel="stylesheet" href="portfolio.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Je me présente, <span class="highlight">Djerwane</span></h1>
+            <h2 class="typing-text"></h2>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn">Voir mes projets</a>
+                <a href="#contact" class="btn btn-secondary">Me contacter</a>
+            </div>
+        </div>
+    </section>
+
+<section id="skills" class="hidden">
+        <h2 class="section-title">Mes Compétences</h2>
+        
+        <div class="skills-container">
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span>Langage C</span>
+                    <span>70%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="--width: 70%"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span>Python</span>
+                    <span>50%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="--width: 50%"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span>HTML / CSS</span>
+                    <span>50%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="--width: 50%"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span>SQL</span>
+                    <span>40%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="--width: 40%"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <div class="skill-info">
+                    <span>JavaScript</span>
+                    <span>30%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="--width: 30%"></div>
+                </div> </div> <div class="skill-box">
+                <div class="skill-info">
+                    <span>Linux/bash</span>
+                    <span>30%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="--width: 30%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="hidden">
+        <h2 class="section-title">Mes Projets</h2>
+
+        <h3 class="projects-category">Mes projets personnels</h3>
+<div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-img">TRI</div> 
+                <div class="project-info">
+                    <h3>Visualiseur de Tri à Bulles</h3>
+                    <p>Application pédagogique montrant le fonctionnement graphique de l'algorithme.</p>
+                    <div class="tags"><span>Python</span><span>Algo</span></div>
+                    
+                    <a href="projet-tri.html" class="project-link">Voir le projet <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">JEU</div>
+                <div class="project-info">
+                    <h3>Jeu du Morpion</h3>
+                    <p>Jeu Tic-Tac-Toe développé entièrement en langage C.</p>
+                    <div class="tags"><span>C</span><span>Logique</span></div>
+
+                    <a href="projet-morpion.html" class="project-link">Voir le projet <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+<div class="project-card">
+                <div class="project-img">WEB</div>
+                <div class="project-info">
+                    <h3>Site "Casse Auto"</h3>
+                    <p>Site vitrine pour la vente de pièces et épaves automobiles.</p>
+                    <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+
+                    <a href="projet-epave.html" class="project-link">Voir le projet <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+             <div class="project-card">
+                <div class="project-img">WEB</div>
+                <div class="project-info">
+                    <h3>Archives Gaming</h3>
+                    <p>Portfolio personnel de mes records avec preuves vidéos.</p>
+                    <div class="tags"><span>HTML</span><span>CSS</span></div>
+
+                    <a href="projet-record.html" class="project-link">Voir le projet <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+        </div>
+
+        <h3 class="projects-category projects-category--spaced">Mes projets universitaires</h3>
+
+        <div class="projects-grid projects-grid--university">
+
+        <div class="project-card">
+            <div class="project-img uni-thumb">
+            <img src="img/sae1.png" alt="SAE 1 - Alarme">
+            </div>
+            <div class="project-info">
+            <h3>Alarme (SAE 1)</h3>
+            <p>Projet BUT GEII : mise en œuvre d’une alarme sur carte Altera, avec validation par chronogrammes et réalisation d’un compteur.</p>
+            <div class="tags"><span>Altera</span><span>Chronogrammes</span><span>Logique</span></div>
+            <a href="projet-alarme.html" class="project-link">Voir le projet <span class="arrow">→</span></a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img uni-thumb">
+            <img src="img/sae2.png" alt="SAE 2 - Robot aspirateur">
+            </div>
+            <div class="project-info">
+            <h3>Robot aspirateur (SAE 2)</h3>
+            <p>Étude du comportement d’un robot type Roomba avec instrumentation (oscilloscope) et montage Arduino sur plaque Labdec.</p>
+            <div class="tags"><span>Arduino</span><span>Oscilloscope</span><span>Labdec</span></div>
+            <a href="projet-roomba.html" class="project-link">Voir le projet <span class="arrow">→</span></a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img uni-thumb">
+            <img src="img/sae3.png" alt="SAE 3 - Vélo électrique">
+            </div>
+            <div class="project-info">
+            <h3>Vélo électrique & assistance (SAE 3)</h3>
+            <p>Conception d’une carte électronique (hacheur 10–24 V / 3 A), schéma + routage, soudure et validation à l’oscilloscope.</p>
+            <div class="tags"><span>PCB</span><span>Soudure</span><span>Oscillo</span></div>
+            <a href="projet-velo.html" class="project-link">Voir le projet <span class="arrow">→</span></a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img uni-thumb">
+            <img src="img/sae4.png" alt="SAE 4 - Robot connecté Wi-Fi">
+            </div>
+            <div class="project-info">
+            <h3>Robot connecté (Wi-Fi) (SAE 4)</h3>
+            <p>Prototype robotique sur châssis, câblage et mise en service d’un pilotage via Wi-Fi (interface mobile) autour d’un ESP32.</p>
+            <div class="tags"><span>ESP32</span><span>Wi-Fi</span><span>Robotique</span></div>
+            <a href="projet-robot.html" class="project-link">Voir le projet <span class="arrow">→</span></a>
+            </div>
+        </div>
+
+        </div>
+
+    </section>
+
+    <section id="contact" class="hidden">
+        <h2 class="section-title">Contact</h2>
+        <div style="text-align: center;">
+            <p style="margin-bottom: 20px; font-size: 1.2rem;">Un projet en tête ? Discutons-en.</p>
+            <a href="mailto:djerwane@gmail.fr" class="btn">Envoyer un mail</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Djerwane</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>

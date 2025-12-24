@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code – Tri à bulles | Djerwane</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Accueil</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-page">
+        <a class="back-link" href="projet-tri.html">← Retour au projet</a>
+
+        <div>
+            <h1 class="project-title">Tri à bulles — Code Python</h1>
+            <p class="project-subtitle">
+                Version propre et lisible du code, intégrée dans le thème du portfolio (au lieu d’ouvrir directement le fichier .py).
+            </p>
+        </div>
+
+        <div class="project-layout">
+            <div class="project-panel">
+                <h2>Code</h2>
+
+                <div class="code-toolbar">
+                    <button class="btn btn-inline" id="copy-code" type="button">Copier le code</button>
+                    <a class="btn btn-inline btn-secondary" href="tri_bulles.py" download>Télécharger .py</a>
+                    <a class="btn btn-inline btn-secondary" href="index.html#projects">Retour portfolio</a>
+                </div>
+
+                <pre class="code-block"><code id="code-python">import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import random
+
+N = 30
+vitesse_animation = 50
+
+donnees = list(range(1, N + 1))
+random.shuffle(donnees)
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            yield arr, j, j + 1
+
+            if arr[j] &gt; arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                yield arr, j, j + 1
+
+fig, ax = plt.subplots()
+ax.set_title(&quot;Visualisation du Tri à Bulles (Python)&quot;)
+
+barres = ax.bar(range(len(donnees)), donnees, align=&quot;edge&quot;, color=&quot;#00ff88&quot;)
+
+ax.set_xlim(0, N)
+ax.set_ylim(0, int(N * 1.1))
+ax.axis(&#x27;off&#x27;)
+
+text = ax.text(0.02, 0.95, &quot;&quot;, transform=ax.transAxes, color=&quot;white&quot;)
+fig.patch.set_facecolor(&#x27;#0a0a0a&#x27;)
+ax.set_facecolor(&#x27;#0a0a0a&#x27;)
+
+iteration = [0]
+
+def update(data_tuple):
+    arr, idx1, idx2 = data_tuple
+    iteration[0] += 1
+
+    for rect, val in zip(barres, arr):
+        rect.set_height(val)
+        rect.set_color(&quot;#00ff88&quot;)
+
+    barres[idx1].set_color(&quot;red&quot;)
+    barres[idx2].set_color(&quot;red&quot;)
+
+    text.set_text(f&quot;Opérations: {iteration[0]}&quot;)
+    return barres
+
+anim = animation.FuncAnimation(
+    fig, 
+    update, 
+    frames=bubble_sort(donnees),
+    interval=vitesse_animation,
+    repeat=False,
+    save_count=2000
+)
+
+plt.show()
+</code></pre>
+
+                <p class="code-hint">
+                    Exécution : <code>python tri_bulles.py</code> (nécessite <code>matplotlib</code>).
+                </p>
+            </div>
+
+            <div class="project-panel">
+                <h2>Infos</h2>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Langage</span>
+                        <span class="meta-value">Python</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Librairies</span>
+                        <span class="meta-value">matplotlib, random</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Taille (N)</span>
+                        <span class="meta-value">30</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Intervalle animation</span>
+                        <span class="meta-value">50 ms</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Objectif</span>
+                        <span class="meta-value">Visualiser le tri à bulles en temps réel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Djerwane</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+    <script>
+        (function () {
+            const btn = document.getElementById('copy-code');
+            const codeEl = document.getElementById('code-python');
+
+            async function copyText(text) {
+                if (navigator.clipboard && window.isSecureContext) {
+                    return navigator.clipboard.writeText(text);
+                }
+                // Fallback
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.left = '-9999px';
+                document.body.appendChild(ta);
+                ta.focus();
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+            }
+
+            btn.addEventListener('click', async () => {
+                const original = btn.textContent;
+                try {
+                    await copyText(codeEl.innerText);
+                    btn.textContent = 'Copié !';
+                } catch (e) {
+                    btn.textContent = 'Impossible de copier';
+                }
+                setTimeout(() => btn.textContent = original, 1400);
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet – Jeu du Morpion | Djerwane</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Accueil</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-page">
+        <a class="back-link" href="index.html#projects">← Retour aux projets</a>
+
+        <div>
+            <h1 class="project-title">Jeu du Morpion</h1>
+            <p class="project-subtitle">
+                Tic‑Tac‑Toe (morpion) développé en langage C. L'objectif principal était de consolider les bases :
+                structures de données simples, logique de jeu, conditions de victoire et interactions utilisateur.
+            </p>
+
+            <div class="tags" style="margin-top: 18px;">
+                <span>C</span>
+                <span>Logique</span>
+                <span>Console</span>
+            </div>
+
+            <div class="project-actions">
+                <a class="btn" href="code-morpion.html" target="_blank" rel="noopener">Voir le code</a>
+                <a class="btn btn-secondary" href="index.html#projects">Retour</a>
+            </div>
+        </div>
+
+        <div class="project-layout">
+            <div class="project-panel">
+                <h2>Présentation</h2>
+                <p>
+                    Le jeu se déroule sur une grille 3×3. Deux joueurs jouent à tour de rôle et tentent d'aligner
+                    trois symboles (ligne, colonne ou diagonale). Le programme gère la saisie, l'affichage de la grille,
+                    la détection de victoire et les cas de match nul.
+                </p>
+
+                <h2 style="margin-top: 18px;">Fonctionnalités</h2>
+                <ul>
+                    <li>Affichage clair de la grille en console.</li>
+                    <li>Validation des entrées (case libre / coordonnées cohérentes).</li>
+                    <li>Détection de victoire (lignes, colonnes, diagonales) et match nul.</li>
+                </ul>
+
+                <h2 style="margin-top: 18px;">Compétences mobilisées</h2>
+                <ul>
+                    <li>Manipulation de tableaux (2D) et boucles.</li>
+                    <li>Décomposition en fonctions : affichage, saisie, vérification.</li>
+                    <li>Gestion de l'état du jeu et conditions d'arrêt.</li>
+                </ul>
+            </div>
+
+            <div class="project-panel">
+                <h2>Infos projet</h2>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Type</span>
+                        <span class="meta-value">Jeu console</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Langage</span>
+                        <span class="meta-value">C</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Code</span>
+                        <span class="meta-value">Lien GitHub à renseigner</span>
+                    </div>
+                </div>
+
+                <p class="code-hint">
+                    Pour activer le bouton <code>Voir le code</code>, remplace simplement le <code>href</code> par
+                    l'URL de ton repository (ou le fichier source, par ex. <code>morpion.c</code>).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Djerwane</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+    <script src="project-page.js"></script>
+</body>
+</html>

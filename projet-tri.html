@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet – Visualiseur de Tri à Bulles | Djerwane</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <nav>
+        <ul>
+            <li><a href="portfolio.html#home">Accueil</a></li>
+            <li><a href="portfolio.html#skills">Compétences</a></li>
+            <li><a href="portfolio.html#projects">Projets</a></li>
+            <li><a href="portfolio.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-page">
+        <a class="back-link" href="portfolio.html#projects">← Retour aux projets</a>
+
+        <div>
+            <h1 class="project-title">Visualiseur de Tri à Bulles</h1>
+            <p class="project-subtitle">
+                Application pédagogique qui illustre, étape par étape, le fonctionnement de l'algorithme de tri à bulles.
+                Objectif : rendre l'algorithme concret grâce à une visualisation graphique.
+            </p>
+
+            <div class="tags" style="margin-top: 18px;">
+                <span>Python</span>
+                <span>Algorithmique</span>
+                <span>Pédagogie</span>
+            </div>
+
+            <div class="project-actions">
+                <a class="btn" href="code-tri-bulles.html" target="_blank" rel="noopener">Voir le code</a>
+                <a class="btn btn-secondary" href="portfolio.html#projects">Retour</a>
+            </div>
+        </div>
+
+        <div class="project-layout">
+            <div class="project-panel">
+                <h2>Présentation</h2>
+                <p>
+                    Le tri à bulles consiste à comparer des éléments adjacents et à les permuter lorsqu'ils sont dans le
+                    mauvais ordre. Le programme met en évidence les échanges successifs jusqu'à obtenir une liste triée.
+                </p>
+
+                <h2 style="margin-top: 18px;">Fonctionnalités</h2>
+                <ul>
+                    <li>Affichage de l'état du tableau à chaque itération.</li>
+                    <li>Mise en évidence des comparaisons et des échanges.</li>
+                    <li>Approche orientée compréhension (et non performance).</li>
+                </ul>
+
+                <h2 style="margin-top: 18px;">Points techniques</h2>
+                <ul>
+                    <li>Découpage clair des étapes de l'algorithme pour la visualisation.</li>
+                    <li>Paramétrage simple pour tester différentes tailles de listes.</li>
+                    <li>Code commenté pour faciliter la lecture.</li>
+                </ul>
+            </div>
+
+            <div class="project-panel">
+                <h2>Infos projet</h2>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Type</span>
+                        <span class="meta-value">Projet pédagogique / algorithmique</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Langage</span>
+                        <span class="meta-value">Python</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Fichier</span>
+                        <span class="meta-value">tri_bulles.py</span>
+                    </div>
+                </div>
+
+                <p class="code-hint">
+                    Astuce : si tu publies sur GitHub, remplace le lien du bouton <code>Voir le code</code> par l'URL du repo
+                    pour que les visiteurs aient accès au projet complet.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Djerwane</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
