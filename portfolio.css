@@ -1,14 +1,13 @@
-/* --- VARIABLES GLOBALES --- */
 :root {
     --bg-color: #0a0a0a;
     --text-color: #ffffff;
-    --accent-color: #00ff88; /* Vert néon */
+    --accent-color: #00ff88; 
     --secondary-color: #1a1a1a;
     --font-main: 'Poppins', sans-serif;
     --font-code: 'Fira Code', monospace;
 }
 
-/* --- RESET & BASES --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +21,6 @@ body {
     overflow-x: hidden;
 }
 
-/* --- CANVAS FOND --- */
 #canvas-bg {
     position: fixed;
     top: 0;
@@ -33,7 +31,6 @@ body {
     pointer-events: none;
 }
 
-/* --- NAVIGATION --- */
 nav {
     position: fixed;
     top: 0;
@@ -65,7 +62,6 @@ nav a:hover {
     color: var(--accent-color);
 }
 
-/* --- SECTIONS GÉNÉRALES --- */
 section {
     min-height: 100vh;
     padding: 100px 10%;
@@ -82,7 +78,6 @@ section {
     letter-spacing: 2px;
 }
 
-/* --- ANIMATIONS SCROLL --- */
 .hidden {
     opacity: 0;
     filter: blur(5px);
@@ -96,7 +91,6 @@ section {
     transform: translateY(0);
 }
 
-/* --- HERO SECTION --- */
 .hero-content {
     max-width: 800px;
 }
@@ -118,7 +112,6 @@ section {
     min-height: 1.5em;
 }
 
-/* Boutons */
 .cta-buttons {
     margin-top: 30px;
     display: flex;
@@ -152,7 +145,6 @@ section {
   font-size: 14px;
 }
 
-/* --- COMPÉTENCES --- */
 .skills-container {
     max-width: 800px;
     width: 100%;
@@ -194,7 +186,6 @@ section.show .skill-bar {
     width: var(--width);
 }
 
-/* --- PROJETS --- */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -249,7 +240,6 @@ section.show .skill-bar {
     font-family: var(--font-code);
 }
 
-/* --- NOUVEAU STYLE : LIEN "VOIR LE PROJET" --- */
 .project-link {
     display: inline-block;
     margin-top: 20px;
@@ -277,7 +267,6 @@ section.show .skill-bar {
     transform: translateX(5px);
 }
 
-/* --- FOOTER --- */
 footer {
     padding: 20px;
     text-align: center;
@@ -285,10 +274,6 @@ footer {
     font-size: 0.9rem;
     color: #777;
 }
-
-/* =========================================================
-   PAGES PROJET (projet-*.html)
-   ========================================================= */
 
 .project-page {
     gap: 40px;
@@ -413,7 +398,6 @@ footer {
     }
 }
 
-/* --- CATEGORIES (SECTION PROJETS) --- */
 #projects .section-title{
     margin-bottom: 12px;
 }
@@ -432,7 +416,6 @@ footer {
     margin-top: 55px;
 }
 
-/* Liens désactivés pour les placeholders */
 .project-link.disabled{
     opacity: 0.45;
     pointer-events: none;
@@ -444,16 +427,16 @@ footer {
   gap: 30px;
 }
 
-/* Bandeau image UNI (n'affecte pas TRI/JEU/WEB) */
+
 .project-img.uni-thumb{
-  height: 150px;          /* même hauteur que tes cards persos */
+  height: 150px;         
   padding: 0;
   overflow: hidden;
   background: #2a2a2a;
-  display: block;         /* override le flex de .project-img pour éviter des bugs d'alignement */
+  display: block;         
 }
 
-/* Image plein cadre */
+
 .project-img.uni-thumb img{
   width: 100%;
   height: 100%;
