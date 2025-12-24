@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. Effet de machine à écrire (Inchangé) ---
     const textElement = document.querySelector('.typing-text');
     if (textElement) {
         const words = ["Développeur C / Python", "Passionné par le Web", "Explorateur de Code"];
@@ -32,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         typeEffect();
     }
 
-    // --- 2. Animation au scroll (Inchangé) ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -44,13 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
     hiddenElements.forEach((el) => observer.observe(el));
 
 
-    // --- 3. Fond Canvas : Symboles de Code Flottants ---
     const canvas = document.getElementById('canvas-bg');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let symbolsArray = [];
         
-        // Liste des symboles "Dev" qui vont flotter
         const devSymbols = ['{ }', '</>', '0', '1', ';', '#', '&&', '||', '[]', 'C', 'Py', 'js'];
 
         function setCanvasSize() {
@@ -64,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
             init(); 
         });
 
-        // Gestion souris (Juste un léger effet de repoussement, très soft)
         let mouse = { x: null, y: null };
         window.addEventListener('mousemove', (e) => {
             mouse.x = e.x;
@@ -80,16 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.text = devSymbols[Math.floor(Math.random() * devSymbols.length)];
-                this.size = Math.random() * 15 + 10; // Taille discrète (10px à 25px)
-                this.speedY = Math.random() * 1 + 0.5; // Monte doucement
-                this.opacity = Math.random() * 0.5 + 0.1; // Transparence variable
+                this.size = Math.random() * 15 + 10;
+                this.speedY = Math.random() * 1 + 0.5; 
+                this.opacity = Math.random() * 0.5 + 0.1;
             }
 
             update() {
-                // Le symbole monte
                 this.y -= this.speedY;
 
-                // Interaction douce avec la souris (les symboles s'écartent un peu)
                 if (mouse.x != null) {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
@@ -102,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
 
-                // Si le symbole sort en haut, il revient en bas (boucle infini)
+
                 if (this.y < -50) {
                     this.y = canvas.height + 50;
                     this.x = Math.random() * canvas.width;
@@ -111,15 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             draw() {
-                ctx.fillStyle = `rgba(0, 255, 136, ${this.opacity})`; // Vert néon avec transparence
-                ctx.font = `${this.size}px 'Fira Code', monospace`; // Police code
+                ctx.fillStyle = `rgba(0, 255, 136, ${this.opacity})`;
+                ctx.font = `${this.size}px 'Fira Code', monospace`;
                 ctx.fillText(this.text, this.x, this.y);
             }
         }
 
         function init() {
             symbolsArray = [];
-            // Densité modérée (pas trop chargé)
             const numberOfSymbols = (canvas.height * canvas.width) / 10000; 
             for (let i = 0; i < numberOfSymbols; i++) {
                 symbolsArray.push(new CodeSymbol());
@@ -138,4 +130,5 @@ document.addEventListener('DOMContentLoaded', () => {
         init();
         animate();
     }
+
 });
