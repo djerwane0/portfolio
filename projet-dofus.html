@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet – Détection de ressources Dofus | Djerwane</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Accueil</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-page">
+        <a class="back-link" href="index.html#projects">← Retour aux projets</a>
+
+        <div>
+            <h1 class="project-title">Détection de ressources – Dofus</h1>
+            <p class="project-subtitle">
+                Prototype expérimental développé en Python autour de la vision par ordinateur. Le programme utilise
+                un modèle YOLO personnalisé pour détecter des ressources à l’écran et une interface PySide6 pour
+                configurer et suivre son fonctionnement.
+            </p>
+
+            <div class="tags" style="margin-top: 18px;">
+                <span>Python</span>
+                <span>YOLO</span>
+                <span>OpenCV</span>
+                <span>PySide6</span>
+            </div>
+
+            <div class="project-actions">
+                <a class="btn" href="https://github.com/djerwane0/dofus-recolte-bot" target="_blank" rel="noopener">Voir le dépôt GitHub</a>
+                <a class="btn btn-secondary" href="index.html#projects">Retour</a>
+            </div>
+        </div>
+
+        <div class="project-layout">
+            <div class="project-panel">
+                <h2>Objectif</h2>
+                <p>
+                    Mettre en application un modèle de détection d’objets dans un cas concret, puis relier les
+                    résultats de la vision par ordinateur à une interface graphique et à une logique de navigation.
+                    Le projet m’a permis de réunir machine learning, traitement d’image et programmation orientée objet.
+                </p>
+
+                <h2 style="margin-top: 18px;">Présentation fonctionnelle</h2>
+                <ul>
+                    <li>Capture de la fenêtre du jeu et analyse de l’image.</li>
+                    <li>Détection des ressources avec un modèle YOLO personnalisé.</li>
+                    <li>Filtrage des résultats selon les ressources sélectionnées.</li>
+                    <li>Récupération des coordonnées des objets détectés.</li>
+                    <li>Interface de configuration et journal d’activité avec PySide6.</li>
+                    <li>Gestion de zones et de déplacements entre différentes cartes.</li>
+                    <li>Sauvegarde des paramètres et des informations connues sur les cartes.</li>
+                </ul>
+
+                <h2 style="margin-top: 18px;">Points techniques</h2>
+                <ul>
+                    <li>Utilisation d’Ultralytics YOLO et de PyTorch pour la détection d’objets.</li>
+                    <li>Traitement des captures avec OpenCV, NumPy et MSS.</li>
+                    <li>Interface graphique construite avec PySide6.</li>
+                    <li>Organisation orientée objet autour des classes GameMap, HarvestBot et BotWindow.</li>
+                    <li>Exécution de la logique principale dans un thread séparé pour conserver une interface réactive.</li>
+                    <li>Gestion de fichiers de configuration et de données de navigation.</li>
+                </ul>
+
+                <h2 style="margin-top: 18px;">Limites et cadre</h2>
+                <ul>
+                    <li>Projet principalement développé et testé sous Windows.</li>
+                    <li>Fonctionnement dépendant de la résolution et de la position de la fenêtre.</li>
+                    <li>Précision liée aux performances du modèle et aux données d’entraînement.</li>
+                    <li>Projet présenté à des fins d’apprentissage ; l’automatisation peut être contraire aux règles du jeu.</li>
+                </ul>
+            </div>
+
+            <div class="project-panel">
+                <h2>Infos projet</h2>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Type</span>
+                        <span class="meta-value">Vision par ordinateur et automatisation</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Stack</span>
+                        <span class="meta-value">Python / YOLO / OpenCV / PyTorch</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Interface</span>
+                        <span class="meta-value">PySide6</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Modèle</span>
+                        <span class="meta-value">Détection d’objets personnalisée</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Code</span>
+                        <span class="meta-value">
+                            <a class="project-link" href="https://github.com/djerwane0/dofus-recolte-bot" target="_blank" rel="noopener">
+                                Voir le code <span class="arrow">→</span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+
+                <p class="code-hint">
+                    Ce projet met en avant la programmation orientée objet, le traitement d’images,
+                    l’utilisation d’un modèle de machine learning et la conception d’une interface graphique.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Djerwane</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+    <script src="project-page.js"></script>
+</body>
+</html>

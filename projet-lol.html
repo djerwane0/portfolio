@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet – Snooze Manager | Djerwane</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Fira+Code&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <nav>
+        <ul>
+            <li><a href="index.html#home">Accueil</a></li>
+            <li><a href="index.html#skills">Compétences</a></li>
+            <li><a href="index.html#projects">Projets</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="project-page">
+        <a class="back-link" href="index.html#projects">← Retour aux projets</a>
+
+        <div>
+            <h1 class="project-title">Snooze Manager</h1>
+            <p class="project-subtitle">
+                Menu d’extension pour le client League of Legends, développé en JavaScript et intégré avec
+                Pengu Loader. Le projet ajoute une interface dédiée et plusieurs options absentes du client de base.
+            </p>
+
+            <div class="tags" style="margin-top: 18px;">
+                <span>JavaScript</span>
+                <span>Pengu Loader</span>
+                <span>HTML / CSS</span>
+                <span>DOM</span>
+            </div>
+
+            <div class="project-actions">
+                <a class="btn" href="https://github.com/djerwane0/bot-league-of-legends" target="_blank" rel="noopener">Voir le dépôt GitHub</a>
+                <a class="btn btn-secondary" href="index.html#projects">Retour</a>
+            </div>
+        </div>
+
+        <div class="project-layout">
+            <div class="project-panel">
+                <h2>Objectif</h2>
+                <p>
+                    Concevoir un menu personnalisable capable de s’intégrer à une application existante afin
+                    d’améliorer l’expérience utilisateur et de regrouper plusieurs réglages dans une interface unique.
+                    Le projet sert également à expérimenter l’automatisation de certaines actions répétitives du client.
+                </p>
+
+                <h2 style="margin-top: 18px;">Présentation fonctionnelle</h2>
+                <ul>
+                    <li>Acceptation automatique des parties.</li>
+                    <li>Relance automatique de la file d’attente.</li>
+                    <li>Sélection de champions selon des préférences enregistrées.</li>
+                    <li>Personnalisation du statut en ligne.</li>
+                    <li>Ajout d’options supplémentaires dans plusieurs menus du client.</li>
+                    <li>Gestion des paramètres depuis une interface dédiée.</li>
+                </ul>
+
+                <h2 style="margin-top: 18px;">Points techniques</h2>
+                <ul>
+                    <li>Intégration du menu dans le client avec Pengu Loader.</li>
+                    <li>Manipulation du DOM et création dynamique de composants d’interface.</li>
+                    <li>Organisation du code en modules indépendants selon les fonctionnalités.</li>
+                    <li>Gestion et conservation des préférences utilisateur.</li>
+                    <li>Interaction avec l’environnement local du client League of Legends.</li>
+                </ul>
+
+                <h2 style="margin-top: 18px;">Compétences travaillées</h2>
+                <ul>
+                    <li>JavaScript et programmation événementielle.</li>
+                    <li>Conception d’interfaces utilisateur.</li>
+                    <li>Modularisation et maintenance du code.</li>
+                    <li>Compréhension et extension d’une application existante.</li>
+                </ul>
+            </div>
+
+            <div class="project-panel">
+                <h2>Infos projet</h2>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Type</span>
+                        <span class="meta-value">Extension d’interface pour client de jeu</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Stack</span>
+                        <span class="meta-value">JavaScript / HTML / CSS</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Intégration</span>
+                        <span class="meta-value">Pengu Loader</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Architecture</span>
+                        <span class="meta-value">Modules fonctionnels</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Code</span>
+                        <span class="meta-value">
+                            <a class="project-link" href="https://github.com/djerwane0/bot-league-of-legends" target="_blank" rel="noopener">
+                                Voir le code <span class="arrow">→</span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+
+                <p class="code-hint">
+                    Projet personnel réalisé dans un objectif d’apprentissage autour de JavaScript,
+                    de la conception d’interfaces et de l’intégration à un environnement applicatif existant.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Djerwane</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+    <script src="project-page.js"></script>
+</body>
+</html>
