@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet – Détection de ressources Dofus | Djerwane</title>
+    <title>Bot Dofus automatisé - Vision et automatisation</title>
     <link rel="stylesheet" href="portfolio.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Fira+Code&display=swap" rel="stylesheet">
 </head>
@@ -24,11 +24,13 @@
         <a class="back-link" href="index.html#projects">← Retour aux projets</a>
 
         <div>
-            <h1 class="project-title">Détection de ressources – Dofus</h1>
+            <h1 class="project-title">Bot Dofus automatisé - Vision et automatisation</h1>
             <p class="project-subtitle">
-                Prototype expérimental développé en Python autour de la vision par ordinateur. Le programme utilise
-                un modèle YOLO personnalisé pour détecter des ressources à l’écran et une interface PySide6 pour
-                configurer et suivre son fonctionnement.
+                Ce projet consiste en la création d’un bot automatisé développé en Python.
+
+                L’objectif était de concevoir un programme capable d’analyser l’environnement du jeu grâce à la capture d’écran, la vision par ordinateur et l’OCR, puis d’exécuter différentes actions automatiquement.
+
+                Le projet intègre plusieurs modules indépendants : détection visuelle, navigation, gestion des combats, récolte, inventaire, déplacements et communication avec des services externes.
             </p>
 
             <div class="tags" style="margin-top: 18px;">
@@ -55,24 +57,56 @@
 
                 <h2 style="margin-top: 18px;">Présentation fonctionnelle</h2>
                 <ul>
-                    <li>Capture de la fenêtre du jeu et analyse de l’image.</li>
-                    <li>Détection des ressources avec un modèle YOLO personnalisé.</li>
-                    <li>Filtrage des résultats selon les ressources sélectionnées.</li>
-                    <li>Récupération des coordonnées des objets détectés.</li>
-                    <li>Interface de configuration et journal d’activité avec PySide6.</li>
-                    <li>Gestion de zones et de déplacements entre différentes cartes.</li>
-                    <li>Sauvegarde des paramètres et des informations connues sur les cartes.</li>
+                    <li>Capture et analyse de l’écran en temps réel.</li>
+                    <li>Détection d’éléments grâce à la vision par ordinateur.</li>
+                    <li>Reconnaissance OCR pour interpréter certaines informations.</li>
+                    <li>Gestion automatique des déplacements et des trajets.</li>
+                    <li>Système de récolte automatisée.</li>
+                    <li>Gestion des combats avec prise de décision.</li>
+                    <li>Gestion des ressources, pods, banque et déplacements.</li>
+                    <li>Interface de lancement et outils de diagnostic.</li>
+                    <li>Communication avec un bot Discord destiné aux administrateurs.</li>
                 </ul>
 
-                <h2 style="margin-top: 18px;">Points techniques</h2>
-                <ul>
-                    <li>Utilisation d’Ultralytics YOLO et de PyTorch pour la détection d’objets.</li>
-                    <li>Traitement des captures avec OpenCV, NumPy et MSS.</li>
-                    <li>Interface graphique construite avec PySide6.</li>
-                    <li>Organisation orientée objet autour des classes GameMap, HarvestBot et BotWindow.</li>
-                    <li>Exécution de la logique principale dans un thread séparé pour conserver une interface réactive.</li>
-                    <li>Gestion de fichiers de configuration et de données de navigation.</li>
-                </ul>
+                <section class="project-section">
+                    <h2>Point technique</h2>
+                    <p>
+                        Le projet repose sur une architecture modulaire développée en Python afin de séparer les différentes fonctionnalités du bot.
+                    </p>
+                    <p>
+                        La partie vision utilise la capture d’écran et le traitement d’image afin d’analyser l’environnement du jeu et détecter les éléments nécessaires au fonctionnement du bot.
+                    </p>
+                    <p>
+                        Un système de navigation permet de gérer les déplacements grâce à des données de cartes et des trajets enregistrés. Le bot intègre également une logique de décision pour choisir les actions à effectuer selon la situation.
+                    </p>
+                    <p>
+                        La partie automatisation regroupe plusieurs modules :
+                    </p>
+                    <ul>
+                        <li>Analyse visuelle et reconnaissance d’informations à l’écran</li>
+                        <li>Gestion des déplacements et des trajets</li>
+                        <li>Automatisation de la récolte</li>
+                        <li>Gestion des combats et prise de décision</li>
+                        <li>Gestion des ressources, pods et interactions avec le jeu</li>
+                        <li>Système de logs et outils de diagnostic</li>
+                        <li>Communication avec un serveur et un bot Discord pour l’administration</li>
+                    </ul>
+                    <p>
+                        Cette organisation permet de faire évoluer chaque partie indépendamment et facilite la maintenance du projet.
+                    </p>
+
+                    <h2>Utilisation d’outils d’assistance</h2>
+
+                    <p>
+                        Durant le développement, j’ai utilisé ponctuellement une intelligence artificielle comme outil d’aide afin de résoudre certains blocages techniques, comprendre des erreurs ou obtenir des pistes de réflexion.
+
+                        Elle a uniquement servi comme support lors du développement. 
+                        La conception de l’architecture, l’écriture du code, l’intégration des fonctionnalités et les choix techniques du projet ont été réalisés par moi-même.
+                    </p>
+
+
+
+                </section>
 
                 <h2 style="margin-top: 18px;">Limites et cadre</h2>
                 <ul>
